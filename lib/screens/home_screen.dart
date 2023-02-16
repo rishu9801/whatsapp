@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:whatsapp/utils/colors.dart';
 import 'package:whatsapp/widgets/contact_list.dart';
 
@@ -62,6 +63,15 @@ class Home extends StatelessWidget {
               ]),
         ),
         body: const TabBarView(children: [ContactList()]),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.pushNamed(context, SelectContactScreen.routeName);
+            },
+            backgroundColor: tabColor,
+            child: const Icon(
+              Icons.comment,
+              color: Colors.white,
+            )),
       ),
     );
   }

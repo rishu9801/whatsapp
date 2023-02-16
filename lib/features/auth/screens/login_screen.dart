@@ -59,53 +59,56 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         elevation: 0,
         backgroundColor: backgroundColor,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "WhatsApp will need to verify your phone number.",
-                ),
-                TextButton(
-                    onPressed: pickCountry,
-                    child: const Text(
-                      "Choose a country",
-                    )),
-                Row(
-                  children: [
-                    if (country != null) Text("+${country!.phoneCode}"),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    SizedBox(
-                      width: size.width * 0.7,
-                      child: TextField(
-                        controller: phoneController,
-                        decoration:
-                            const InputDecoration(hintText: "phone number"),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    "WhatsApp will need to verify your phone number.",
+                  ),
+                  TextButton(
+                      onPressed: pickCountry,
+                      child: const Text(
+                        "Choose a country",
+                      )),
+                  Row(
+                    children: [
+                      if (country != null) Text("+${country!.phoneCode}"),
+                      const SizedBox(
+                        width: 10,
                       ),
-                    )
-                  ],
-                )
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: size.width * 0.4,
-                  child: CustomButton(text: "Next", onPressed: sendPhoneNumber),
-                )
-              ],
-            )
-          ],
+                      SizedBox(
+                        width: size.width * 0.7,
+                        child: TextField(
+                          controller: phoneController,
+                          decoration:
+                              const InputDecoration(hintText: "phone number"),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: size.width * 0.4,
+                    child:
+                        CustomButton(text: "Next", onPressed: sendPhoneNumber),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
