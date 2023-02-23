@@ -12,7 +12,7 @@ import 'package:whatsapp/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp/features/auth/screens/user_info_screen.dart';
 import 'package:whatsapp/models/user_model.dart';
 import 'package:whatsapp/widgets/contact_list.dart';
-import 'package:whatsapp/widgets/mobile_chat_screen.dart';
+import 'package:whatsapp/features/chat/screens/mobile_chat_screen.dart';
 
 final authRepositoryProvider = Provider((ref) => AuthRepository(
     auth: FirebaseAuth.instance, firestore: FirebaseFirestore.instance));
